@@ -1,0 +1,12 @@
+{
+  "name": "ch-4-blocking-nonblocking",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "Index.js",
+  "scripts": {
+    "start": "node Index.js"
+  }
+}
