@@ -1,0 +1,12 @@
+{
+  "name": "ch-5-server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "Server.js",
+  "scripts": {
+    "start": "node Server.js"
+  }
+}
