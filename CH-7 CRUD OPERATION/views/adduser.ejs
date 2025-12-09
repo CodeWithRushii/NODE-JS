@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add User</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="text-center my-3">Form (CRUD Operation)</h1>
+
+    <div class="container" style="max-width: 600px;">
+
+        <form method="POST" action="/addUser">
+
+            <!-- Name -->
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" name="Name" class="form-control" required placeholder="Enter Your Name..">
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="Email" class="form-control" required placeholder="Enter Your Email..">
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="Password" class="form-control" required
+                    placeholder="Enter Your Password..">
+            </div>
+
+            <!-- Phone -->
+            <div class="mb-3">
+                <label class="form-label">Phone</label>
+                <input type="number" name="Phone" class="form-control" required placeholder="Enter Your Phone Number..">
+            </div>
+
+            <!-- Address -->
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                <textarea name="Address" class="form-control" rows="3" required
+                    placeholder="Enter Your Address..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-5">Submit</button>
+            </div>
+
+        </form>
+
+        <!-- Display Button -->
+        <div class="text-center mt-3">
+            <a href="/" class="btn btn-success px-5">Display</a>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

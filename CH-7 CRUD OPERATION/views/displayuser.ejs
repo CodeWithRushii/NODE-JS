@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display User</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="text-center">User Data</h1>
+
+    <table class="table table-hover text-center" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Phone Num</th>
+                <th>Address</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% if(allUsers.length===0) { %>
+                <tr>
+                    <td colspan="8" class="text-center">No users found</td>
+                </tr>
+                <% } else { %>
+                    <% allUsers.map((User)=> { %>
+                        <tr>
+                            <td>
+                                <%= User.Id %>
+                            </td>
+                            <td>
+                                <%= User.Name %>
+                            </td>
+                            <td>
+                                <%= User.Email %>
+                            </td>
+                            <td>
+                                <%= User.Password %>
+                            </td>
+                            <td>
+                                <%= User.Phone %>
+                            </td>
+                            <td>
+                                <%= User.Address %>
+                            </td>
+
+                            <td>
+                                <a href="/deleteUser?Id=<%= User.Id %>" class="btn btn-danger">
+                                    Delete
+                                </a>
+                            </td>
+
+                            <td>
+                                <a href="/editPage?Id=<%= User.Id %>" class="btn btn-primary">
+                                    Edit
+                                </a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                            <% } %>
+        </tbody>
+    </table>
+
+    <div class="text-center mt-3">
+        <a href="/addUserPage" class="btn btn-success">
+            Add User
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
