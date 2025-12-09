@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display User</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+            min-height: 100vh;
+            padding-top: 30px;
+        }
+
+        .page-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        table {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        tbody tr:hover {
+            background-color: #f0f7ff;
+            transition: 0.3s;
+        }
+
+        .badge-priority {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .high {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        .medium {
+            background-color: #ffdd00;
+            color: white;
+        }
+
+        .low {
+            background-color: #2ed573;
+            color: white;
+        }
+
+        .complete {
+            background-color: #1eff00;
+            color: white;
+        }
+
+        .pending {
+            background-color: #ffdd00;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-card">
+        <h1 class="text-center mb-4">User Task List</h1>
+
+        <table class="table table-hover text-center align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Task</th>
+                    <th>Assign Date</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% if(alltask.length===0) { %>
+                    <tr>
+                        <td colspan="8" class="text-center">No Tasks Available</td>
+                    </tr>
+                    <% } else { %>
+                        <% alltask.map((task)=> { %>
+                            <tr>
+                                <td>
+                                    <%= task.Id %>
+                                </td>
+                                <td>
+                                    <%= task.Name %>
+                                </td>
+                                <td>
+                                    <%= task.AssignDate %>
+                                </td>
+                                <td>
+                                    <%= task.DueDate %>
+                                </td>
+
+                                <td>
+                                    <span class="badge-priority 
+                                <%= task.priority.toLowerCase() %>">
+                                        <%= task.priority %>
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="badge-priority
+                                <% if(task.status === 'complete'){ %>
+                                 complete <% }  else { %> pending<% } %>">
+                                        <%= task.status %>
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="/deletetask?Id=<%= task.Id %>" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="/editPage?Id=<%= task.Id %>" class="btn btn-primary btn-sm">Edit</a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                                <% } %>
+            </tbody>
+        </table>
+
+        <div class="text-center mt-3">
+            <a href="/addtaskPage" class="btn btn-success px-4 py-2">
+                Add Task
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
