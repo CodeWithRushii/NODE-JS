@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 50%, #0d1b2a 100%);
+    color: #e0e0e0;
+    overflow-x: hidden;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #00ffff 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 8s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    25% {
+        transform: translateY(-30px) translateX(20px);
+    }
+
+    50% {
+        transform: translateY(-60px) translateX(-20px);
+    }
+
+    75% {
+        transform: translateY(-30px) translateX(30px);
+    }
+}
+
+h1 {
+    font-size: 4rem;
+    background: linear-gradient(45deg, #00ffff, #00ff88, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+    z-index: 10;
+    margin-bottom: 20px;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: #5fb3b3;
+    z-index: 10;
+    margin-bottom: 40px;
+}
+
+.explore-btn {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.explore-btn:hover {
+    background: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    transform: scale(1.05);
+}
+
+.content {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.organism-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.organism-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.4s;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.organism-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.organism-card:hover::before {
+    opacity: 1;
+}
+
+.organism-card:hover {
+    transform: translateY(-10px);
+    border-color: #00ffff;
+    box-shadow: 0 10px 40px rgba(0, 255, 255, 0.4);
+}
+
+.organism-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.organism-card h3 {
+    color: #00ffff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.organism-card p {
+    line-height: 1.6;
+    color: #b0b0b0;
+}
+
+.fun-fact {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 255, 0.1));
+    border-left: 4px solid #00ff88;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 60px 0;
+}
+
+.fun-fact h3 {
+    color: #00ff88;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.interactive-section {
+    text-align: center;
+    margin: 80px 0;
+}
+
+.interactive-section h2 {
+    color: #00ffff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.light-button {
+    padding: 20px 50px;
+    font-size: 1.3rem;
+    background: rgba(0, 255, 136, 0.2);
+    border: 2px solid #00ff88;
+    color: #00ff88;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s;
+    margin: 10px;
+}
+
+.light-button:hover {
+    background: rgba(0, 255, 136, 0.4);
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
+}
+
+.light-show {
+    height: 300px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.light-orb {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.light-orb.active {
+    opacity: 0.8;
+    animation: orb-float 2s ease-in-out;
+}
+
+@keyframes orb-float {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.2);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: 80px;
+    color: #5fb3b3;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:500");
+body {
+    background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 50%, #0d1b2a 100%);
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    
+    height: 100vh;        /* Full screen height */
+    min-height: 100vh;    /* Ensures it fills screen */
+    overflow: hidden;     /* optional - you can remove if scrolling needed */
+}
+
+
+.c {
+    text-align: center;
+    width: 80%;
+    margin: 100px auto;
+    position: relative;
+}
+
+._404 {
+    font-size: 220px;
+    display: inline-block;
+    height: 250px;
+    letter-spacing: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+._1 {
+    font-size: 4em;
+    letter-spacing: 12px;
+    line-height: 80%;
+    position: relative;
+}
+
+._2 {
+    font-size: 20px;
+    position: relative;
+}
+
+.text {
+    font-size: 70px;
+    text-align: center;
+    margin-top: 19px;
+    width: 100%;
+    line-height: 1.2;
+    position: relative;
+    z-index: 3;
+}
+
+.btn {
+    background-color: #fff;
+    width: 358px;
+    padding: 5px;
+    font-size: 25px;
+    color: #33cc99;
+    text-decoration: none;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.right {
+    float: right;
+    width: 60%;
+}
+
+hr {
+    border: none;
+    border-top: 5px solid #fff;
+    width: 420px;
+    margin: 0 auto;
+    height: 10px;
+}
