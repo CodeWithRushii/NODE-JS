@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h1 style="text-align: center;" class="mt-5">View Book Details</h1>
+
+    <div class="container col-10">
+        <table class="table table-hover">
+            <thead style="text-align: center;">
+                <tr>
+                    <th scope="col">NO.</th>
+                    <th scope="col">BOOK NAME</th>
+                    <th scope="col">BOOK AUTHOR</th>
+                    <th scope="col">BOOK PRICE</th>
+                    <th scope="col">BOOK LANGUAGE</th>
+                    <th scope="col">BOOK IMAGE</th>
+                    <th scope="col">ACTIONS</th>
+
+                </tr>
+            </thead>
+            <tbody style="text-align: center; vertical-align: middle;">
+                <% allBooks.map((book, index)=> { %>
+                    <tr>
+                        <th scope="row">
+                            <%= index + 1 %>
+                        </th>
+                        <td>
+                            <%= book.BookName %>
+                        </td>
+                        <td>
+                            <%= book.BookAuthor %>
+                        </td>
+                        <td>
+                            <%= book.BookPrice %>
+                        </td>
+                        <td>
+                            <%= book.BookLang %>
+                        </td>
+                        <td><img src="<%= book.BookImage %>" alt="Book Image" style="width: 50px; height: auto;" %></td>
+                        <td>
+                            <button class="btn btn-danger"><a href="/DeleteBook?id=<%= book._id %>" style="text-decoration: none; color: white;">Delete</a></button>
+                            <button class="btn btn-primary">Update</button>
+                        </td>
+                    </tr>
+                    <% })%>
+            </tbody>
+        </table>
+
+        <button class="btn btn-success"><a href="/AddBook" style="text-decoration: none; color: white;">Add New Book</a></button>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
