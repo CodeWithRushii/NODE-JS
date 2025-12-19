@@ -22,7 +22,7 @@ app.get('/AddBook', (req, res) => {
 });
 
 // Insert Book
-app.post('/addBook', async (req, res) => {
+app.post('/addBook/:id', async (req, res) => {
     console.log(req.body);
 
     const BookAdded = await Book.create(req.body);
@@ -35,6 +35,30 @@ app.post('/addBook', async (req, res) => {
     }
 
 });
+
+app.post('/updateBook', async (req, res) => {
+    const updatedBook = await Book.findByIdAndUpdate(req.body.id, req.body, { new: true });
+    console.log(updatedBook);
+
+
+    if (updatedBook) {
+        console.log("Book Updated...");
+        return res.redirect('/');
+    } else {
+        console.log("Book not Updated...");
+    }
+});
+
+
+app.get('/EditBook/:id', async (req, res) => {
+
+    const book = await Book.findById(req.params.id);
+
+    return res.render('EditBook', { book });
+});
+
+
+// Delete Book
 
 app.get('/DeleteBook', async (req, res) => {
 

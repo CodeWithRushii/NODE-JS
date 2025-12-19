@@ -48,7 +48,7 @@
                         <td><img src="<%= book.BookImage %>" alt="Book Image" style="width: 50px; height: auto;" %></td>
                         <td>
                             <button class="btn btn-danger"><a href="/DeleteBook?id=<%= book._id %>" style="text-decoration: none; color: white;">Delete</a></button>
-                            <button class="btn btn-primary">Update</button>
+                            <button class="btn btn-primary"><a href="/EditBook/<%= book._id %>" style="text-decoration: none; color: white;">Edit</a></button>
                         </td>
                     </tr>
                     <% })%>
