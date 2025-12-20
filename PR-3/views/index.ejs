@@ -1,97 +1,543 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bioluminescence - Nature's Living Light</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="hero">
-        <div class="glow-particles" id="particles"></div>
-        <h1>BIOLUMINESCENCE</h1>
-        <p class="tagline">Discover Nature's Living Light</p>
-        <button class="explore-btn" onclick="document.querySelector('.content').scrollIntoView({behavior: 'smooth'})">
-            Explore the Glow
-        </button>
-    </div>
+    <header>
+        <nav>
+            <div class="logo">⚡ TIMBERLINE</div>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#story">STORY</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#products">PRODUCTS</a></li>
+                <li><a href="#process">PROCESS</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#reviews">REVIEWS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="content">
-        <div style="text-align: center; margin-bottom: 60px;">
-            <h2 style="color: #00ffff; font-size: 2.5rem; margin-bottom: 20px;">What is Bioluminescence?</h2>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-                Bioluminescence is the production and emission of light by living organisms through chemical reactions. 
-                This mesmerizing phenomenon occurs in various species across the ocean depths, forests, and even caves.
-            </p>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>TIMBERLINE</h1>
+            <p>Where Nature Meets Modern Craftsmanship</p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Unique Designs</div>
+                </div>
+            </div>
+
+            <a href="#products" class="cta-button">Explore Collection</a>
         </div>
+    </section>
 
-        <div class="organism-grid">
-            <div class="organism-card">
-                <div class="organism-icon">🐙</div>
-                <h3>Firefly Squid</h3>
-                <p>These tiny squids create spectacular light shows in Japanese waters. They have photophores covering their bodies that produce a brilliant blue glow, creating an ethereal underwater spectacle during mating season.</p>
+    <section class="story-section" id="story">
+        <div class="story-content">
+            <div class="story-video">
+                🎬
             </div>
-
-            <div class="organism-card">
-                <div class="organism-icon">🪼</div>
-                <h3>Crystal Jellyfish</h3>
-                <p>The discovery of Green Fluorescent Protein (GFP) in these jellyfish revolutionized biological research. They glow with a mesmerizing green light when disturbed, serving as both a defense mechanism and communication tool.</p>
-            </div>
-
-            <div class="organism-card">
-                <div class="organism-icon">🦗</div>
-                <h3>Fireflies</h3>
-                <p>Perhaps the most famous bioluminescent creatures, fireflies use their light to attract mates. Each species has its own unique flash pattern, creating a natural morse code of romance in summer nights.</p>
-            </div>
-
-            <div class="organism-card">
-                <div class="organism-icon">🦐</div>
-                <h3>Deep Sea Anglerfish</h3>
-                <p>Female anglerfish dangle a luminous lure containing bioluminescent bacteria to attract prey in the pitch-black depths. This hunting strategy is one of nature's most creative adaptations.</p>
-            </div>
-
-            <div class="organism-card">
-                <div class="organism-icon">🍄</div>
-                <h3>Ghost Mushrooms</h3>
-                <p>These eerie fungi glow with a soft green light in dark forests. Scientists believe this attracts insects that help spread their spores, turning decomposing wood into haunting natural lanterns.</p>
-            </div>
-
-            <div class="organism-card">
-                <div class="organism-icon">🐛</div>
-                <h3>Railroad Worms</h3>
-                <p>These larvae have the unique ability to produce both red and green light simultaneously. The red lights on their head and green lights along their body create an appearance reminiscent of a train at night.</p>
-            </div>
-        </div>
-
-        <div class="fun-fact">
-            <h3>💡 Fascinating Fact</h3>
-            <p style="font-size: 1.1rem; line-height: 1.8;">
-                About 90% of deep-sea creatures are bioluminescent! In the darkness of the ocean depths where sunlight cannot reach, 
-                organisms have evolved to create their own light for communication, hunting, and defense. Some species can even produce 
-                different colors of light for different purposes.
-            </p>
-        </div>
-
-        <div class="interactive-section">
-            <h2>Experience Bioluminescence</h2>
-            <p style="color: #b0b0b0; margin-bottom: 30px; font-size: 1.1rem;">
-                Click the buttons below to see different bioluminescent colors
-            </p>
-            <button class="light-button" onclick="createLightShow('#00ffff')">Blue Glow</button>
-            <button class="light-button" onclick="createLightShow('#00ff88')">Green Glow</button>
-            <button class="light-button" onclick="createLightShow('#ff00ff')">Purple Glow</button>
-            
-            <div class="light-show" id="lightShow">
-                <p style="color: #5fb3b3;">Click a button to create a light show!</p>
+            <div class="story-text">
+                <h2>Our Legacy of Excellence</h2>
+                <p>Since 1999, Timberline has been at the forefront of handcrafted wooden furniture design. What started
+                    as a small workshop in Surat has grown into one of India's most trusted names in premium wooden
+                    craftsmanship.</p>
+                <p>Every piece tells a story of dedication, passion, and uncompromising quality. Our master craftsmen
+                    bring decades of experience, combined with modern techniques to create furniture that transcends
+                    generations.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>🌊 Dive deeper into the mysteries of bioluminescence 🌊</p>
-        <p style="margin-top: 10px; font-size: 0.9rem;">Nature's light show has been captivating humans for millennia</p>
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Crafted With Passion & Precision</h2>
+                <p>For over 25 years, we've been transforming premium wood into extraordinary furniture pieces that tell
+                    a story. Each grain, each curve, each finish is a testament to our commitment to excellence.</p>
+                <p>Our master craftsmen combine traditional techniques with modern innovation to create furniture that
+                    doesn't just fill a space—it transforms it. Every piece is sustainably sourced, meticulously
+                    crafted, and built to last generations.</p>
+
+                <div class="about-features">
+                    <div class="about-feature">
+                        <h4>🌳 Sustainable</h4>
+                        <p>100% eco-friendly materials from certified forests</p>
+                    </div>
+                    <div class="about-feature">
+                        <h4>🏆 Premium Quality</h4>
+                        <p>Only the finest wood selections</p>
+                    </div>
+                    <div class="about-feature">
+                        <h4>✋ Handcrafted</h4>
+                        <p>Every piece made by skilled artisans</p>
+                    </div>
+                    <div class="about-feature">
+                        <h4>⏰ Lifetime Warranty</h4>
+                        <p>We stand behind our craftsmanship</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                🪵
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h2 class="section-title">Premium Collection</h2>
+
+        <div class="product-categories">
+            <button class="category-btn">All Products</button>
+            <button class="category-btn">Living Room</button>
+            <button class="category-btn">Bedroom</button>
+            <button class="category-btn">Dining</button>
+            <button class="category-btn">Office</button>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">BESTSELLER</span>
+                    🪑
+                </div>
+                <div class="product-info">
+                    <h3>Executive Oak Chair</h3>
+                    <p>Ergonomically designed with solid oak construction. Features premium leather cushioning,
+                        adjustable height mechanism, and 360° swivel base for ultimate comfort.</p>
+                    <div class="product-footer">
+                        <div class="price">₹45,999</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">NEW</span>
+                    🛋️
+                </div>
+                <div class="product-info">
+                    <h3>Walnut Royal Sofa</h3>
+                    <p>Three-seater luxury sofa with handcrafted walnut frame and plush cushioning. Perfect centerpiece
+                        for your living room with timeless elegance.</p>
+                    <div class="product-footer">
+                        <div class="price">₹1,25,000</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    🪞
+                </div>
+                <div class="product-info">
+                    <h3>Teak Library Shelf</h3>
+                    <p>Seven-tier grand bookshelf made from premium teak wood with reinforced shelving for heavy book
+                        collections. Features built-in LED lighting.</p>
+                    <div class="product-footer">
+                        <div class="price">₹78,500</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">PREMIUM</span>
+                    🛏️
+                </div>
+                <div class="product-info">
+                    <h3>Cedar King Bed</h3>
+                    <p>Majestic king-size bed frame with intricate carving details. Natural cedar provides aromatic and
+                        insect-repelling properties for better sleep.</p>
+                    <div class="product-footer">
+                        <div class="price">₹1,89,000</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">LUXURY</span>
+                    🍽️
+                </div>
+                <div class="product-info">
+                    <h3>Mahogany Dining Set</h3>
+                    <p>Eight-seater dining table with matching chairs. Rich mahogany finish with hand-polished surface,
+                        expandable design for larger gatherings.</p>
+                    <div class="product-footer">
+                        <div class="price">₹2,45,000</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    💼
+                </div>
+                <div class="product-info">
+                    <h3>Rosewood Executive Desk</h3>
+                    <p>Luxury office desk with multiple drawers and cable management. Features premium rosewood with
+                        leather inlay writing surface and modern design.</p>
+                    <div class="product-footer">
+                        <div class="price">₹1,65,000</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    📚
+                </div>
+                <div class="product-info">
+                    <h3>Vintage Oak Mirror</h3>
+                    <p>Floor-standing full-length mirror with ornate oak frame featuring hand-carved floral patterns.
+                        Adjustable tilt mechanism included.</p>
+                    <div class="product-footer">
+                        <div class="price">₹38,500</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">POPULAR</span>
+                    🚪
+                </div>
+                <div class="product-info">
+                    <h3>Pine Wardrobe</h3>
+                    <p>Spacious four-door wardrobe with internal shelving and hanging space. Smooth-gliding mechanisms,
+                        soft-close doors, and mirror panels.</p>
+                    <div class="product-footer">
+                        <div class="price">₹95,000</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    🎨
+                </div>
+                <div class="product-info">
+                    <h3>Birch Display Cabinet</h3>
+                    <p>Glass-fronted display cabinet with internal LED lighting. Perfect for showcasing collectibles,
+                        fine china, and precious memorabilia.</p>
+                    <div class="product-footer">
+                        <div class="price">₹68,000</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    🪑
+                </div>
+                <div class="product-info">
+                    <h3>Teak Rocking Chair</h3>
+                    <p>Classic rocking chair with ergonomic design and smooth rocking motion. Perfect for relaxation
+                        with cushioned seating and armrests.</p>
+                    <div class="product-footer">
+                        <div class="price">₹52,000</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    🏠
+                </div>
+                <div class="product-info">
+                    <h3>Walnut Coffee Table</h3>
+                    <p>Modern coffee table with lower storage shelf. Handcrafted walnut with natural grain patterns,
+                        tempered glass top optional.</p>
+                    <div class="product-footer">
+                        <div class="price">₹42,500</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">EXCLUSIVE</span>
+                    🎯
+                </div>
+                <div class="product-info">
+                    <h3>Cherry Console Table</h3>
+                    <p>Elegant console table with two drawers. Perfect for entryways, crafted from premium cherry wood
+                        with antique brass hardware.</p>
+                    <div class="product-footer">
+                        <div class="price">₹56,000</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section" id="process">
+        <h2 class="section-title">Our Crafting Process</h2>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="process-number">01</div>
+                <div class="process-icon">🌲</div>
+                <h3>Wood Selection</h3>
+                <p>We carefully select premium wood from certified sustainable forests, ensuring quality and
+                    environmental responsibility.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">02</div>
+                <div class="process-icon">✏️</div>
+                <h3>Design & Planning</h3>
+                <p>Our designers create detailed blueprints, considering both aesthetics and functionality for each
+                    unique piece.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">03</div>
+                <div class="process-icon">🔨</div>
+                <h3>Handcrafting</h3>
+                <p>Master craftsmen bring designs to life using traditional techniques combined with modern precision
+                    tools.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">04</div>
+                <div class="process-icon">✨</div>
+                <h3>Finishing & Quality</h3>
+                <p>Each piece undergoes meticulous finishing, quality checks, and multiple coats of protective
+                    treatment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">Craftsmanship Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item large">🏡</div>
+            <div class="gallery-item">🔨</div>
+            <div class="gallery-item">✨</div>
+            <div class="gallery-item">🎯</div>
+            <div class="gallery-item">🌲</div>
+            <div class="gallery-item large">🛠️</div>
+            <div class="gallery-item">💎</div>
+            <div class="gallery-item">🏆</div>
+            <div class="gallery-item">🎨</div>
+            <div class="gallery-item">🪵</div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="reviews">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"The quality is absolutely exceptional. Our dining table has become the
+                    centerpiece of family gatherings and the craftsmanship is unmatched. Worth every single rupee!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RM</div>
+                    <div class="author-info">
+                        <h4>Rajesh Mehta</h4>
+                        <p>Homeowner, Mumbai</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"We furnished our entire office with Timberline furniture. The attention to
+                    detail and customization options were perfect for our needs. Highly professional team!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">PS</div>
+                    <div class="author-info">
+                        <h4>Priya Sharma</h4>
+                        <p>CEO, Tech Startup</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Invested in their bedroom set 5 years ago and it still looks brand new. The
+                    warranty service is also excellent. Best furniture investment I've ever made!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AK</div>
+                    <div class="author-info">
+                        <h4>Anil Kumar</h4>
+                        <p>Architect, Bangalore</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"The custom walnut bookshelf they designed for my library is a masterpiece.
+                    Every visitor compliments it. Truly world-class craftsmanship from Surat!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">DG</div>
+                    <div class="author-info">
+                        <h4>Dr. Deepak Gupta</h4>
+                        <p>Professor, Delhi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Space?</h2>
+            <p>Schedule a free consultation with our design experts and bring your vision to life with premium
+                handcrafted furniture.</p>
+            <a href="#contact" class="cta-button">Book Consultation</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Why Choose Timberline</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <div class="feature-icon">🌍</div>
+                <h3>100% Sustainable</h3>
+                <p>All our wood is ethically sourced from certified sustainable forests with full traceability and
+                    environmental certifications.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">👨‍🎨</div>
+                <h3>Master Craftsmen</h3>
+                <p>Over 50 skilled artisans with decades of experience creating each masterpiece by hand with passion
+                    and precision.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🎨</div>
+                <h3>Custom Designs</h3>
+                <p>Bring your vision to life with fully customizable designs tailored to your space, style, and specific
+                    requirements.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">⏰</div>
+                <h3>Lifetime Warranty</h3>
+                <p>We stand behind our craftsmanship with a comprehensive lifetime warranty on all products and free
+                    maintenance.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🚚</div>
+                <h3>Free Installation</h3>
+                <p>Complimentary white-glove delivery and professional installation across India with expert assembly
+                    teams.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">💳</div>
+                <h3>Flexible Financing</h3>
+                <p>Easy EMI options available with zero down payment and competitive interest rates from all major
+                    banks.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🏆</div>
+                <h3>Award Winning</h3>
+                <p>Multiple national awards for design excellence and craftsmanship quality recognized across the
+                    industry.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-icon">🔒</div>
+                <h3>Quality Assured</h3>
+                <p>Every piece undergoes rigorous quality control with multi-point inspection before delivery to your
+                    home.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TIMBERLINE</h3>
+                <p>Premium wooden furniture crafted with passion and precision since 1999. Transforming spaces with
+                    timeless elegance.</p>
+                <div class="social-links">
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📺</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#story">Our Story</a>
+                <a href="#about">About Us</a>
+                <a href="#products">Products</a>
+                <a href="#process">Process</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#reviews">Testimonials</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#">Custom Design</a>
+                <a href="#">Installation</a>
+                <a href="#">Maintenance</a>
+                <a href="#">Warranty</a>
+                <a href="#">Consultation</a>
+                <a href="#">Bulk Orders</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📍 123 Woodcraft Avenue, Surat, Gujarat 395001</p>
+                <p>📞 +91 98765 43210</p>
+                <p>📞 +91 98765 43211</p>
+                <p>✉️ info@timberline.com</p>
+                <p>✉️ sales@timberline.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <p>Monday - Saturday: 10:00 AM - 8:00 PM</p>
+                <p>Sunday: 11:00 AM - 6:00 PM</p>
+                <p>Public Holidays: By Appointment</p>
+                <p>Showroom visits recommended with prior booking</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 TIMBERLINE. All Rights Reserved. | Designed with 🧡 in Surat, Gujarat, India</p>
+            <p style="margin-top: 1rem;">Privacy Policy | Terms & Conditions | Shipping Policy | Return Policy</p>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
+
 </html>
