@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h1 style="text-align: center;" class="mt-5">Add Book Details</h1>
+
+    <div class="container col-4">
+        <form method="post" action="/addBook" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label">Book Name</label>
+                <input type="text" name="BookName" class="form-control" placeholder="Enter Book name" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Author</label>
+                <input type="text" name="BookAuthor" class="form-control" placeholder="Enter Author name" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input type="number" name="BookPrice" class="form-control" placeholder="Enter Price" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Language</label>
+                <input type="text" name="BookLang" class="form-control" placeholder="Enter Language" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Image URL</label>
+                <input type="file" name="BookImage" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Book</button>
+        </form>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
