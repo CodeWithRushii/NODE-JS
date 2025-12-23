@@ -55,13 +55,13 @@ rushi-ecommerce/
 ## 🖼 Screenshots
 
 ### 📦 Product List Page
-![Product List Page](/Screenshot/VIEWPAGE.png)
+![Product List Page](Screenshot/VIEWPAGE.png)
 
 ### ➕ Add Product Page
-![Add Product Page](/Screenshot/ADDPAGE.png)
+![Add Product Page](Screenshot/ADDPAGE.png)
 
 ### ✏️ Edit Product Page
-![Edit Product Page](/Screenshot/EDITPAGE.png)
+![Edit Product Page](Screenshot/EDITPAGE.png)
 
 ---
 
