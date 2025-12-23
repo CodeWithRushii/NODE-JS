@@ -1,0 +1,246 @@
+/* ===== Page Background ===== */
+body {
+    background:
+        linear-gradient(rgba(241, 243, 246, 0.617), rgba(241, 243, 246, 0.134)),
+        url("https://images.unsplash.com/photo-1557683316-973673baf926");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.gradient-bg {
+    background: #ffffff30;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* ===== E-commerce Title Section ===== */
+.ecom-title {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    padding: 26px 30px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+}
+
+.icon-box {
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.stat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    /* same feel as btn-sm */
+    border-radius: 6px;
+    /* matches Bootstrap button */
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    height: 32px;
+    /* same as btn-sm */
+}
+
+.stat-badge i {
+    font-size: 1rem;
+}
+
+.stat-badge small {
+    font-size: 11px;
+    line-height: 1;
+    opacity: 0.85;
+}
+
+.stat-badge span {
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.stat-badge strong {
+    margin-left: 4px;
+}
+
+
+.add-product-btn {
+    background: #fff;
+    color: #0d6efd;
+    padding: 12px 22px;
+    border-radius: 28px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.add-product-btn:hover {
+    background: #f1f3f6;
+    color: #0d6efd;
+}
+
+
+.ecom-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.add-product-btn {
+    background: #fff;
+    color: #0d6efd;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    border: none;
+}
+
+.add-product-btn:hover {
+    background: #f1f3f6;
+    color: #0d6efd;
+}
+
+/* ===== Product Grid Enhancements (E-commerce Feel) ===== */
+.product-card {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+/* Hover like Amazon */
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+}
+
+/* Product Image Area */
+.product-img-box {
+    background: linear-gradient(180deg, #fafafa, #f1f3f6);
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.product-img-box img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Product Name */
+.product-title {
+    font-size: 16px;
+    font-weight: 600;
+    height: 42px;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+/* Brand */
+.brand {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Price Styling */
+.price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #212529;
+    margin-top: 4px;
+}
+
+/* Category Chip (Flipkart Style) */
+.category {
+    font-size: 12px;
+    background: #eef3ff;
+    color: #0d6efd;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 500;
+}
+
+/* Action Buttons */
+.action-btns a {
+    width: 48%;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Buttons Hover */
+.action-btns .btn-outline-primary:hover {
+    background: #0d6efd;
+    color: #fff;
+}
+
+.action-btns .btn-outline-danger:hover {
+    background: #dc3545;
+    color: #fff;
+}
+
+/* Mobile spacing */
+@media (max-width: 576px) {
+    .page-title {
+        font-size: 26px;
+    }
+}
+
+.btn.add-product-btn {
+    color: #fff;
+}
+
+
+
+
+
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}

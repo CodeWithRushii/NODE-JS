@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+
+    <link rel="stylesheet" href="/AddProduct.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark gradient-bg px-4">
+        <a class="navbar-brand fw-semibold" href="/">
+            <i class="bi bi-bag-check-fill me-2"></i>E-Commerce
+        </a>
+    </nav>
+
+
+
+    <div class="form-wrapper">
+
+
+        <h3 style="color: white; margin-left: 15px;"><i class="bi bi-box-seam"></i> Add New Product</h3>
+
+        <!-- Form -->
+        <div class="form-card">
+            <form method="post" action="/addProduct">
+
+                <div class="mb-3">
+                    <label class="form-label">Product Name</label>
+                    <input type="text" name="ProductName" class="form-control" placeholder="Enter product name"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Brand</label>
+                    <input type="text" name="ProductBrand" class="form-control" placeholder="Enter brand name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Price</label>
+                    <input type="number" name="ProductPrice" class="form-control" placeholder="Enter price" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Category</label>
+                    <select name="ProductCategory" class="form-control" required>
+                        <option value="">Select Category</option>
+                        <option value="MOBILE">MOBILE</option>
+                        <option value="MONITER">MONITER</option>
+                        <option value="LAPTOP">LAPTOP</option>
+                        <option value="AC">AC</option>
+                        <option value="PC">PC</option>
+                        <option value="ACCESSORY">ACCESSORY</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Product Image URL</label>
+                    <input type="text" name="ProductImage" class="form-control" placeholder="Paste image URL" required>
+                </div>
+
+                <button type="submit" class="btn submit-btn w-100">
+                    <i class="bi bi-plus-circle"></i> Add Product
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 py-3 gradient-bg text-light">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <span class="small">
+                © 2025 E-Commerce Dashboard
+            </span>
+
+            <div class="d-flex gap-3">
+                <a href="#" class="text-light text-decoration-none small">Privacy</a>
+                <a href="#" class="text-light text-decoration-none small">Terms</a>
+                <a href="#" class="text-light text-decoration-none small">Support</a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
