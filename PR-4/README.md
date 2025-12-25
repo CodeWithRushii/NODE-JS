@@ -93,3 +93,11 @@ http://localhost:9080
 
 **Rushi**  
 Full Stack Development Student
+
+---
+
+## 📄 License
+
+MIT License
+
+https://github.com/CodeWithRushii/Licence
