@@ -1,4 +1,4 @@
-require('./Config/db.Config');
+require('./Config/db.config');
 const Product = require('./models/Product.Models');
 const express = require('express');
 
