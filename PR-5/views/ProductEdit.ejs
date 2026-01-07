@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky touch perfume</title>
+    <link rel="icon" href="/Images/Skytouch Logo 1.png" type="image/png">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/ProductEdit.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+           <a class="navbar-brand" href="#">
+                    <img src="/images/Skytouch Logo 1.png" alt="" width="100px">
+                </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item ms-lg-3">
+                        <a href="/" class="btn btn-outline-custom">
+                            <i class="bi bi-arrow-left me-2"></i>Back to Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Form -->
+    <div class="form-container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-xl-8">
+
+                    <!-- Back Button (Mobile) -->
+                    <div class="d-lg-none mb-4">
+                        <a href="/" class="btn btn-outline-custom">
+                            <i class="bi bi-arrow-left me-2"></i>Back to Dashboard
+                        </a>
+                    </div>
+
+                    <div class="form-card">
+                        <!-- Form Header -->
+                        <div class="form-header">
+                            <h4><i class="bi bi-pencil-square me-2"></i>Update Product</h4>
+                            <p>Fill in the details below to add a new fragrance to your collection</p>
+                        </div>
+
+                        <!-- Form Body -->
+                        <div class="form-body">
+                            <form method="POST" action="/updateProduct" enctype="multipart/form-data">
+
+                                <!-- Basic Information -->
+                                <div class="form-section">
+                                    <h5 class="section-title">Basic Information</h5>
+
+                                    <input type="hidden" name="id" value="<%= product._id %>">
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label ">Product Name</label>
+                                            <input type="text" name="product_name" class="form-control"
+                                                value="<%= product.product_name %>">
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label ">Price (₹)</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">₹</span>
+                                                <input type="number" name="product_Price" class="form-control"
+                                                    value="<%= product.product_Price %>">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label ">Description</label>
+                                        <textarea name="description" class="form-control"
+                                            rows="3"><%= product.description %></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Product Details -->
+                                <div class="form-section">
+                                    <h5 class="section-title">Product Details</h5>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label ">Gender</label>
+                                            <select class="form-select" name="gender">
+                                                <% ["MALE","FEMALE","UNISEX"].forEach(g=> { %>
+                                                    <option value="<%= g %>" <%if(product.gender===g){ %> selected <% }
+                                                            %>>
+                                                            <%= g %>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label ">Usage / Occasion</label>
+                                            <select class="form-select" name="usage">
+                                                <% ["PARTY","CASUAL","FORMAL","DAILY","NIGHT","OFFICE"].forEach(u=> { %>
+                                                    <option value="<%= u %>" <%if(product.usage===u){ %> selected <% }
+                                                            %>>
+                                                            <%= u %>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label ">Fragrance Type</label>
+                                            <select class="form-select" name="fragrance_type">
+                                                <%
+                                                    ["FLORAL","FRUITY","WOODY","CITRUS","ORIENTAL","AQUATIC","GOURMAND","CHYPRE"].forEach(t=>
+                                                    { %>
+                                                    <option value="<%= t %>" <%if(product.fragrance_type===t){ %>
+                                                        selected <% } %>>
+                                                            <%= t %>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label ">Product Category</label>
+                                            <select class="form-select" name="category">
+                                                <% ["PERFUME","ROOM SPRAY","BODY SPRAY","ATTAR"].forEach(c=> { %>
+                                                    <option value="<%= c %>" <%if(product.category===c){ %> selected <%
+                                                            } %>>
+                                                            <%= c %>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sizes -->
+                                <div class="form-section">
+                                    <h5 class="section-title">Available Quantities</h5>
+
+                                    <% ["50ML","100ML","200ML","500ML"].forEach(size=> { %>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="size"
+                                                value="<%= size %>" <% if (product.size && product.size.includes(size))
+                                                { %>
+
+                                            checked <%}%> >
+                                                <label class="form-check-label">
+                                                    <%= size %>
+                                                </label>
+                                        </div>
+                                        <% }) %>
+                                </div>
+
+                                <!-- Image -->
+                                <div class="form-section">
+                                    <h5 class="section-title">Product Image</h5>
+
+                                    <% if (product.image) { %>
+                                        <div class="mb-3">
+                                            <img src="/<%= product.image %>" width="120"
+                                                class="rounded shadow-sm">
+                                        </div>
+                                        <% } %>
+
+                                            <input type="file" name="image" class="form-control">
+                                            <small class="text-muted">Leave empty to keep existing image</small>
+                                </div>
+
+                                <!-- Action -->
+                                <div
+                                    class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-3">
+                                    <button type="submit" class="btn btn-primary-custom">
+                                        <i class="bi bi-pencil-square me-2"></i>Update Product
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <!-- Form Tips -->
+                    <div class="mt-4 p-4 bg-white rounded-3 shadow-sm">
+                        <h6 class="fw-semibold mb-3"><i class="bi bi-lightbulb me-2 text-warning"></i>Form Tips</h6>
+                        <ul class="list-unstyled text-muted mb-0">
+                            <li class="mb-2"><i class="bi bi-check-circle me-2 text-success"></i>Use clear,
+                                high-resolution product images</li>
+                            <li class="mb-2"><i class="bi bi-check-circle me-2 text-success"></i>Be descriptive in your
+                                product description</li>
+                            <li class="mb-2"><i class="bi bi-check-circle me-2 text-success"></i>Select all applicable
+                                sizes for better customer options</li>
+                            <li><i class="bi bi-check-circle me-2 text-success"></i>Accurate categorization helps
+                                customers find your products</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

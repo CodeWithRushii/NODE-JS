@@ -1,0 +1,326 @@
+:root {
+            --primary-color: #8a6d3b;
+            --secondary-color: #f5e8d0;
+            --dark-color: #1a1a1a;
+            --light-color: #f9f6f0;
+            --accent-color: #d4a762;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: var(--light-color);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #555 !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        /* Form Container */
+        .form-container {
+            min-height: calc(100vh - 76px);
+            display: flex;
+            align-items: center;
+            padding: 3rem 0;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: none;
+            overflow: hidden;
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, var(--primary-color), #a17e40);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .form-header h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        .form-body {
+            padding: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .form-body {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Form Elements */
+        .form-label {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control,
+        .form-select {
+            padding: 0.75rem 1rem;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(138, 109, 59, 0.15);
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        /* Checkbox Styling */
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .form-check-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(138, 109, 59, 0.25);
+        }
+
+        .form-check-label {
+            font-weight: 500;
+        }
+
+        .quantity-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .quantity-option {
+            position: relative;
+        }
+
+        .quantity-option input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .quantity-option label {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .quantity-option input[type="checkbox"]:checked+label {
+            background-color: var(--secondary-color);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .quantity-option label:hover {
+            border-color: var(--accent-color);
+        }
+
+        /* File Upload Styling */
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .file-upload-label {
+            display: block;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .file-upload-label:hover {
+            background-color: #e9ecef;
+            border-color: var(--accent-color);
+        }
+
+        .file-upload-label i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .file-preview {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .file-preview img {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+
+        /* Buttons */
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #75592f;
+            border-color: #75592f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(138, 109, 59, 0.2);
+        }
+
+        .btn-outline-custom {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.75rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Form Sections */
+        .form-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .form-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        /* Back Button */
+        .back-button {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            z-index: 10;
+        }
+
+        /* Success/Error Messages */
+        .alert-custom {
+            border-radius: 10px;
+            border: none;
+            padding: 1rem 1.5rem;
+        }
+
+        /* Progress Bar (for multi-step form if needed) */
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+
+        /* Required Field Indicator */
+        .required:after {
+            content: " *";
+            color: var(--danger-color);
+        }
