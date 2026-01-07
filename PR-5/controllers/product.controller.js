@@ -82,7 +82,7 @@ const updateProduct = async (req, res) => {
             req.body.image = req.file.path;
 
 
-            const updatedproduct = await Product.findByIdAndUpdate(req.body.id, req.body);
+            const updatedproduct = await Product.findByIdAndUpdate(req.params.id, req.body);
 
 
             if (updatedproduct) {

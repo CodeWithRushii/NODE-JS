@@ -21,6 +21,6 @@ router.get('/addProduct', controller.productFormPage);
 router.post('/addProduct', upload.single('image'), controller.addProduct);
 router.get('/deleteProduct', controller.deleteProduct);
 router.get('/editProduct/:id', controller.editProductPage);
-router.post('/updateProduct', upload.single('image'), controller.updateProduct);
+router.post('/updateProduct/:id', upload.single('image'), controller.updateProduct);
 
 module.exports = router;
