@@ -1,0 +1,90 @@
+<%- include('header') %>
+
+
+    <!-- Table Start -->
+    <div class="container-fluid pt-4 px-4 100vh">
+        <div class="row g-4">
+
+            <div class="col-sm-12 ">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <h6 class="mb-4">Hoverable Table</h6>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>No</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
+                                    <th>contact</th>
+                                    <th>Gender</th>
+                                    <th>Hobby</th>
+                                    <th>City</th>
+                                    <th>About</th>
+                                    <th>Image</th>
+                                    <th colspan="2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% allAdmin.map((admin, index)=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= index + 1%>
+                                        </td>
+
+                                        <td>
+                                            <%= admin.firstname %>
+                                        </td>
+
+                                        <td>
+                                            <%= admin.lname %>
+                                        </td>
+                                        <td>
+                                            <%= admin.email %>
+                                        </td>
+                                        <td>
+                                            <%= admin.password %>
+                                        </td>
+                                        <td>
+                                            <%= admin.contact %>
+                                        </td>
+                                        <td>
+                                            <%= admin.gender %>
+                                        </td>
+                                        <td>
+                                            <%= admin.hobby %>
+                                        </td>
+                                        <td>
+                                            <%= admin.city %>
+                                        </td>
+                                        <td>
+                                            <%= admin.about %>
+                                        </td>
+                                        <td>
+                                            <img src="<%= admin.profileimg %>" width="100" alt="">
+                                        </td>
+
+                                        <td>
+                                            <button class="btn btn-danger"><a href="/deleteAdmin?Id=<%= admin.id %>"
+                                                    style="color: white;">Delete</a></button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-warning"><a href="/editAdmin/<%= admin.id %>"
+                                                    style="color: white;">Edit</a></button>
+                                        </td>
+                                    </tr>
+
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Table End -->
+
+
+    <%- include('footer') %>
