@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>UPDATE EMP FORM</h1>
+        <div class="col-6 pt-5">
+            <form method="post" action="/employee/updateEmp">
+                <input type="hidden" name="emp_id" value="<%= singleEmp['id'] %>">
+                <div class="mb-3">
+                    <label class="form-label">EMP NAME</label>
+                    <input type="text" name="emp_name" value="<%= singleEmp['emp_name']%>" class="form-control"
+                        placeholder="Enter emp name">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">EMP EMAIL</label>
+                    <input type="email" name="emp_email" value="<%= singleEmp['emp_email']%>" class="form-control"
+                        placeholder="Enter emp email">
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">EMP PASSWORD</label>
+                    <input type="password" name="emp_password" value="<%= singleEmp['emp_password']%>"
+                        class="form-control" placeholder="Enter emp password">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">EMP GENDER</label>
+                    <div>
+                        <input type="radio" name="emp_gender" value="Male" class="form-check-input" <%
+                            if(singleEmp['emp_gender']=='Male' ) { %> checked <% }%>>
+                            <label class="form-check-label">
+                                Male
+                            </label>
+
+                            <input type="radio" name="emp_gender" value="Female" class="form-check-input" <%
+                                if(singleEmp['emp_gender']=='Female' ) { %> checked <% }%>>
+                                <label class="form-check-label">
+                                    Female
+                                </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">EMP SALRY</label>
+                    <input type="number" name="emp_salary" value="<%= singleEmp['emp_salary']%>" class="form-control"
+                        placeholder="Enter emp salary">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">EMP HOBBY</label>
+
+                    <div>
+                        <% ["Reading", "Music" , "Cricket" , "Uno (Game)" , "Other" ].map((hobby)=> { %>
+
+                            <input type="checkbox" name="emp_hobby" value="<%= hobby %>" <%
+                                if(singleEmp['emp_hobby'].includes(hobby)) {%> checked <%}%>
+                                class="form-check-input">
+                                <label class="form-check-label">
+                                    <%= hobby %>
+                                </label>
+
+                                <% }) %>
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">EMP ROLE</label>
+
+                    <div>
+                        <select class="form-select" name="emp_role">
+
+                            <% ["Owner", "Manager" , "HR" , "Employee" ].map((role)=> {%>
+
+                                <option value="<%= role %>" <%if(singleEmp['emp_role']==role) {%> selected <%}%>>
+                                        <%= role %>
+                                </option>
+                                <% }) %>
+
+                        </select>
+                    </div>
+                </div>
+
+                <button type=" submit" class="btn btn-warning">Update</button>
+            </form>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
