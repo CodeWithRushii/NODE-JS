@@ -55,12 +55,12 @@
                     <label class="form-label">Category</label>
                     <select name="ProductCategory" class="form-control" required>
                         <option value="">Select Category</option>
-                        <option value="MOBILE">MOBILE</option>
-                        <option value="MONITER">MONITER</option>
-                        <option value="LAPTOP">LAPTOP</option>
-                        <option value="AC">AC</option>
-                        <option value="PC">PC</option>
-                        <option value="ACCESSORY">ACCESSORY</option>
+                        <option value="MOBILE"<%= product.ProductCategory === "MOBILE" ? 'selected' : '' %>>MOBILE</option>
+                        <option value="MONITER"<%= product.ProductCategory === "MONITER" ? 'selected' : '' %>>MONITER</option>
+                        <option value="LAPTOP"<%= product.ProductCategory === "LAPTOP" ? 'selected' : '' %>>LAPTOP</option>
+                        <option value="AC"<%= product.ProductCategory === "AC" ? 'selected' : '' %>>AC</option>
+                        <option value="PC"<%= product.ProductCategory === "PC" ? 'selected' : '' %>>PC</option>
+                        <option value="ACCESSORY"<%= product.ProductCategory === "ACCESSORY" ? 'selected' : '' %>>ACCESSORY</option>
                     </select>
                 </div>
 
