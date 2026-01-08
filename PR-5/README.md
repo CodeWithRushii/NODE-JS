@@ -68,13 +68,13 @@ project-root/
 ## 📸 Screenshots
 
 ### Product Dashboard
-![Dashboard](/screenshot/ProductView.png)
+![Dashboard](screenshot/ProductView.png)
 
 ### Add Product Page
-![Add Product](/screenshot/ProductAdd.png)
+![Add Product](screenshot/ProductAdd.png)
 
 ### Edit Product Page
-![Edit Product](/screenshot/ProductEdit.png)
+![Edit Product](screenshot/ProductEdit.png)
 
 > Create a folder named `screenshots` in the root directory and place your images there.
 
