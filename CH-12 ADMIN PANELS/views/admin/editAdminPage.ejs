@@ -1,4 +1,4 @@
-<%- include('header') %>
+<%- include('../header') %>
 
     <div class="container-fluid pt-4 px-4 ">
         <div class="row g-4">
@@ -7,7 +7,7 @@
 
                     <h6 class="mb-4">Edit Form</h6>
 
-                    <form class="form-horizontal" method="post" action="/editAdmin/<%= singleAdmin.id %>"
+                    <form class="form-horizontal" method="post" action="/editAdmin/<%= singleAdmin._id %>"
                         enctype="multipart/form-data">
 
                         <div class="card-body">
@@ -17,8 +17,8 @@
                             <div class="form-group row mb-3">
                                 <label class="col-sm-3 col-form-label text-end">First Name</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="firstname"
-                                        value="<%= singleAdmin.firstname %>" placeholder="First Name Here">
+                                    <input type="text" class="form-control" name="fname"
+                                        value="<%= singleAdmin.fname %>" placeholder="First Name Here">
                                 </div>
                             </div>
 
@@ -148,7 +148,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-sm-3 col-form-label text-end">Profile Image</label>
                                 <div class="col-sm-9">
-                                    <img src="../<%= singleAdmin.profileimg %>" height="50" class="mb-2">
+                                    <img src="/<%= singleAdmin.profileimg %>" height="50" class="mb-2">
                                     <input type="file" name="profileimg" class="form-control">
                                 </div>
                             </div>
@@ -168,4 +168,4 @@
         </div>
     </div>
 
-    <%- include('footer') %>
+    <%- include('../footer') %>

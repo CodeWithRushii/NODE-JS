@@ -1,7 +1,7 @@
-<%- include('header') %>
+<%- include('../header') %>
 
     <!-- Form Start -->
-    <div class="container-fluid pt-4 px-4">
+    <div class="container-fluid pt-4 px-4 justify-contect-center">
         <div class="row g-4">
 
             <div class="col-sm-12 col-xl-6">
@@ -17,8 +17,7 @@
                             <div class="form-group row mb-3">
                                 <label class="col-sm-3 text-right col-form-label">First Name</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="firstname" class="form-control"
-                                        placeholder="First Name Here">
+                                    <input type="text" name="fname" class="form-control" placeholder="First Name Here">
                                 </div>
                             </div>
 
@@ -120,7 +119,6 @@
                                             ,"Aizawl","Shillong","Agartala","Kohima","Itanagar", "Puducherry"
                                             ,"PortBlair","Daman","Silvassa","Kavaratti","Leh" ].map(city=> { %> <option
                                                 value="<%= city %>">
-                                                <%=city %>
                                             <option value="<%= city %>">
                                                 <%= city %>
                                             </option>
@@ -162,4 +160,4 @@
         </div>
     </div>
 
-    <%- include('footer') %>
+    <%- include('../footer') %>

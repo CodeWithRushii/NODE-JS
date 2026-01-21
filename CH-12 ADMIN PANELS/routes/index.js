@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 
-const { dashboardPage, addAdminPage, viewAdminPage, addAdmin, deleteAdmin, editAdmin, editAdminPage, updateAdmin } = require('../controllers/admin.controller');
+const { dashboardPage, addAdminPage, viewAdminPage, addAdmin, deleteAdmin, editAdminPage, updateAdmin, loginPage, checkLogin, logout, changepassword, changepasswordpage, profilepage, verifyEmail, newPasswordPage, changeNewPassword, otpPage, otpVerify } = require('../controllers/admin.controller');
 
 const route = express.Router();
 
@@ -16,8 +16,38 @@ const myStorage = multer.diskStorage({
 
 const upload = multer({ storage: myStorage });
 
-route.get('/', dashboardPage);
+//auth
+route.get('/', loginPage);
+route.post('/login', checkLogin);
+
+//logout
+route.get('/logout', logout);
+
+//Change-Password
+route.get('/changepasswordpage', changepasswordpage);
+route.post('/changepassword', changepassword);
+
+// forgot password
+route.post('/verify-email', verifyEmail);
+
+//otp page
+route.get('/otppage', otpPage);
+route.post('/otpverify', otpVerify);
+
+// New Password Page
+route.get('/newPasswordPage', newPasswordPage);
+route.post('/changeNewPassword', changeNewPassword);
+
+//myprofile
+route.get('/profile', profilepage)
+
+//Dashbord Page
+route.get('/dashboard', dashboardPage);
+
+//AddAdmin Page
 route.get('/addAdminPage', addAdminPage);
+
+//ViewAdmin Page
 route.get('/viewAdminPage', viewAdminPage);
 
 // Insert Admin
@@ -27,6 +57,6 @@ route.post('/addAdmin', upload.single('profileimg'), addAdmin);
 route.get('/deleteAdmin', deleteAdmin);
 
 // Edit Admin
-route.get('/editAdmin/:Id', editAdminPage);
-route.post('/editAdmin/:Id', upload.single('profileimg'), updateAdmin);
+route.get('/editAdmin/:id', editAdminPage);
+route.post('/editAdmin/:id', upload.single('profileimg'), updateAdmin);
 module.exports = route;

@@ -1,8 +1,8 @@
-<%- include('header') %>
+<%- include('../header') %>
 
 
     <!-- Table Start -->
-    <div class="container-fluid pt-4 px-4 100vh">
+    <div class="container-fluid pt-4 px-4">
         <div class="row g-4">
 
             <div class="col-sm-12 ">
@@ -23,56 +23,61 @@
                                     <th>City</th>
                                     <th>About</th>
                                     <th>Image</th>
-                                    <th colspan="2">Action</th>
+                                    <% if (admin.id==="695f42ce9c3487a3e041e9eb" ){%>
+                                        <th colspan="2">Action</th>
+                                        <%}%>
                                 </tr>
                             </thead>
                             <tbody>
-                                <% allAdmin.map((admin, index)=> { %>
+                                <% allAdmin.map((admindata, index)=> { %>
                                     <tr>
                                         <td>
                                             <%= index + 1%>
                                         </td>
 
                                         <td>
-                                            <%= admin.firstname %>
+                                            <%= admindata.fname %>
                                         </td>
 
                                         <td>
-                                            <%= admin.lname %>
+                                            <%= admindata.lname %>
                                         </td>
                                         <td>
-                                            <%= admin.email %>
+                                            <%= admindata.email %>
                                         </td>
                                         <td>
-                                            <%= admin.password %>
+                                            <%= admindata.password %>
                                         </td>
                                         <td>
-                                            <%= admin.contact %>
+                                            <%= admindata.contact %>
                                         </td>
                                         <td>
-                                            <%= admin.gender %>
+                                            <%= admindata.gender %>
                                         </td>
                                         <td>
-                                            <%= admin.hobby %>
+                                            <%= admindata.hobby %>
                                         </td>
                                         <td>
-                                            <%= admin.city %>
+                                            <%= admindata.city %>
                                         </td>
                                         <td>
-                                            <%= admin.about %>
+                                            <%= admindata.about %>
                                         </td>
                                         <td>
-                                            <img src="<%= admin.profileimg %>" width="100" alt="">
+                                            <img src="/<%= admindata.profileimg %>" width="100" alt="">
                                         </td>
 
-                                        <td>
-                                            <button class="btn btn-danger"><a href="/deleteAdmin?Id=<%= admin.id %>"
-                                                    style="color: white;">Delete</a></button>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-warning"><a href="/editAdmin/<%= admin.id %>"
-                                                    style="color: white;">Edit</a></button>
-                                        </td>
+                                        <% if (admin.id==="695f42ce9c3487a3e041e9eb" ){%>
+                                            <td>
+                                                <button class="btn btn-danger"><a
+                                                        href="/deleteAdmin?Id=<%= admindata.id %>"
+                                                        style="color: white;">Delete</a></button>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-warning"><a href="/editAdmin/<%= admindata.id %>"
+                                                        style="color: white;">Edit</a></button>
+                                            </td>
+                                            <%}%>
                                     </tr>
 
                                     <% }) %>
@@ -87,4 +92,4 @@
     <!-- Table End -->
 
 
-    <%- include('footer') %>
+    <%- include('../footer') %>
