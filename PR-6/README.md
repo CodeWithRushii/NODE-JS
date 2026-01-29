@@ -69,31 +69,31 @@ views/
 > Create a folder named **screenshots/** in your project root and add these images.
 
 ### 🔐 Login Page
-![Login](/Screenshot/LOGIN_PAGE.png)
+![Login](Screenshot/LOGIN_PAGE.png)
 
 ### 🔑 Forgot Password
-![Forgot Password](/Screenshot/FORGET_PASSWORD_PAGE.png)
+![Forgot Password](Screenshot/FORGET_PASSWORD_PAGE.png)
 
 ### 🔢 OTP Verification
-![OTP](/Screenshot/OTP_PAGE.png)
+![OTP](Screenshot/OTP_PAGE.png)
 
 ### 🔐 Create New Password
-![New Password](/Screenshot/CREATE_NEWPASSWORD_PAGE.png)
+![New Password](Screenshot/CREATE_NEWPASSWORD_PAGE.png)
 
 ### 📊 Dashboard
-![Dashboard](/Screenshot/DASHBORD_PAGE.png)
+![Dashboard](Screenshot/DASHBORD_PAGE.png)
 
 ### ➕ Add Admin
-![Add Admin](/Screenshot/ADD_USER_PAGE.png)
+![Add Admin](Screenshot/ADD_USER_PAGE.png)
 
 ### 👤 My Profile
-![Profile](/Screenshot/USER_PROFILE_PAGE.png)
+![Profile](Screenshot/USER_PROFILE_PAGE.png)
 
 ### 🔁 Change Password
-![Change Password](/Screenshot/CHANGE_PASSWORD_PAGE.png)
+![Change Password](Screenshot/CHANGE_PASSWORD_PAGE.png)
 
 ### 📋 View Admin
-![View Admin](/Screenshot/VIEW_ADMIN_PAGE.png)
+![View Admin](Screenshot/VIEW_ADMIN_PAGE.png)
 
 ---
 
