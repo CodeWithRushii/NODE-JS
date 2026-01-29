@@ -227,8 +227,13 @@ module.exports.verifyEmail = async (req, res) => {
 }
 
 // OTP Page
-module.exports.otpPage = (req, res) => {
+module.exports.otpPage = async (req, res) => {
     try {
+        const admin = await Admin.findById(req.cookies.adminId);
+
+        if (admin) {
+            return res.redirect('/dashboard');
+        }
         return res.render('auth/OTPPage');
     } catch (err) {
         console.log("Something went wrong");
@@ -259,8 +264,12 @@ module.exports.otpVerify = async (req, res) => {
 }
 
 // New Password Page
-module.exports.newPasswordPage = (req, res) => {
+module.exports.newPasswordPage = async (req, res) => {
     try {
+        const admin = await Admin.findById(req.cookies.adminId);
+        if (admin) {
+            return res.redirect('/dashboard');
+        }
         res.clearCookie('OTP');
         return res.render('auth/newPasswordPage');
     } catch (err) {
