@@ -1,0 +1,83 @@
+<%- include('../header') %>
+
+    <div class="container-fluid pt-4 px-4">
+        <div class="profile-wrapper">
+
+            <!-- LEFT CARD -->
+            <div class="profile-left">
+                <div class="avatar-ring">
+                    <img src="<%= admin.profileimg || '/images/default-user.png' %>" class="avatar">
+                </div>
+
+                <h2>
+                    <%= admin.fname %>
+                        <%= admin.lname %>
+                </h2>
+                <p class="role">Admin</p>
+                <span class="badge">
+                    <%= admin.email==="dedaniyarushi42@gmail.com" ? "Main Admin" : "Sub Admin" %>
+                </span>
+            </div>
+
+            <!-- RIGHT CARD -->
+            <div class="profile-right">
+
+                <h3>Personal Details</h3>
+
+                <div class="grid">
+
+                    <div>
+                        <label>Email</label>
+                        <p>
+                            <%= admin.email %>
+                        </p>
+                    </div>
+
+                    <div>
+                        <label>Contact</label>
+                        <p>
+                            <%= admin.contact || '-' %>
+                        </p>
+                    </div>
+
+                    <div>
+                        <label>Gender</label>
+                        <p>
+                            <%= admin.gender || '-' %>
+                        </p>
+                    </div>
+
+                    <div>
+                        <label>City</label>
+                        <p>
+                            <%= admin.city || '-' %>
+                        </p>
+                    </div>
+
+                    <div>
+                        <label>Hobby</label>
+                        <p>
+                            <%= admin.hobby || '-' %>
+                        </p>
+                    </div>
+
+                    <div>
+                        <label>About</label>
+                        <p>
+                            <%= admin.about || '-' %>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="div">
+                    <button class="btn btn-warning mt-5"> <a style="color: white;" href="/editAdmin/<%= admin.id%>">EDIT
+                            PROFILE</a></button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('../footer') %>

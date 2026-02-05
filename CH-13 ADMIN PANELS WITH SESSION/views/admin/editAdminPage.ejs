@@ -1,0 +1,171 @@
+<%- include('../header') %>
+
+    <div class="container-fluid pt-4 px-4 ">
+        <div class="row g-4">
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-secondary rounded h-100 p-4">
+
+                    <h6 class="mb-4">Edit Form</h6>
+
+                    <form class="form-horizontal" method="post" action="/editAdmin/<%= singleAdmin._id %>"
+                        enctype="multipart/form-data">
+
+                        <div class="card-body">
+                            <h4 class="card-title mb-3">Personal Info</h4>
+
+                            <!-- First Name -->
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-3 col-form-label text-end">First Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="fname"
+                                        value="<%= singleAdmin.fname %>" placeholder="First Name Here">
+                                </div>
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-3 col-form-label text-end">Last Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="lname"
+                                        value="<%= singleAdmin.lname %>" placeholder="Last Name Here">
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-3 col-form-label text-end">Email</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" name="email"
+                                        value="<%= singleAdmin.email %>" placeholder="Email Here">
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-3 col-form-label text-end">Password</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" name="password"
+                                        value="<%= singleAdmin.password %>" placeholder="Password Here">
+                                </div>
+                            </div>
+
+                            <!-- Contact -->
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-3 col-form-label text-end">Contact No</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="contact"
+                                        value="<%= singleAdmin.contact %>" placeholder="Contact No Here">
+                                </div>
+                            </div>
+
+                            <!-- Gender -->
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-3 col-form-label text-end">Gender</label>
+                                <div class="col-sm-9">
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" value="Male"
+                                            <%=singleAdmin.gender==='Male' ? 'checked' : '' %>>
+                                        <label class="form-check-label">Male</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" value="Female"
+                                            <%=singleAdmin.gender==='Female' ? 'checked' : '' %>>
+                                        <label class="form-check-label">Female</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Hobby -->
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-3 col-form-label text-end">Hobby</label>
+                                <div class="col-sm-9">
+
+                                    <% ["Reading","Playing","Other"].map((hobby, index)=> { %>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="hobby[]"
+                                                value="<%= hobby %>" id="hobby<%= index %>"
+                                                <%=singleAdmin.hobby.includes(hobby) ? 'checked' : '' %>>
+                                            <label class="form-check-label" for="hobby<%= index %>">
+                                                <%= hobby %>
+                                            </label>
+                                        </div>
+                                        <% }) %>
+
+                                </div>
+                            </div>
+
+                            <!-- City -->
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-3 col-form-label text-end">City</label>
+                                <div class="col-sm-9">
+                                    <select class="form-select" name="city">
+                                        <option value="">Select City</option>
+
+                                        <% [ "Ahmedabad"
+                                            ,"Surat","Vadodara","Rajkot","Bhavnagar","Jamnagar","Junagadh", "Navsari"
+                                            ,"Anand","Gandhinagar","Mumbai","Pune","Nagpur","Nashik", "Aurangabad"
+                                            ,"Thane","Solapur","Kolhapur","Amravati","Jaipur","Jodhpur", "Udaipur"
+                                            ,"Kota","Ajmer","Bikaner","Alwar","New Delhi","Lucknow","Kanpur", "Varanasi"
+                                            ,"Agra","Noida","Ghaziabad","Meerut","Prayagraj","Gorakhpur", "Bhopal"
+                                            ,"Indore","Jabalpur","Gwalior","Ujjain","Sagar","Bengaluru", "Mysuru"
+                                            ,"Mangaluru","Hubli","Belagavi","Davanagere","Chennai", "Coimbatore"
+                                            ,"Madurai","Salem","Tiruchirappalli","Erode","Vellore", "Hyderabad"
+                                            ,"Warangal","Nizamabad","Karimnagar","Visakhapatnam", "Vijayawada"
+                                            ,"Guntur","Nellore","Tirupati","Kurnool","Kochi", "Thiruvananthapuram"
+                                            ,"Kozhikode","Thrissur","Alappuzha","Kolkata", "Howrah"
+                                            ,"Durgapur","Asansol","Siliguri","Chandigarh","Ludhiana", "Amritsar"
+                                            ,"Jalandhar","Patiala","Gurugram","Faridabad","Panipat", "Ambala"
+                                            ,"Hisar","Patna","Gaya","Bhagalpur","Muzaffarpur","Ranchi", "Jamshedpur"
+                                            ,"Dhanbad","Bhubaneswar","Cuttack","Rourkela","Sambalpur", "Guwahati"
+                                            ,"Dibrugarh","Silchar","Jorhat","Raipur","Bilaspur","Durg", "Bhilai"
+                                            ,"Shimla","Manali","Dharamshala","Dehradun","Haridwar", "Roorkee"
+                                            ,"Nainital","Srinagar","Jammu","Panaji","Margao", "Vasco da Gama"
+                                            ,"Imphal","Aizawl","Shillong","Agartala","Kohima", "Itanagar"
+                                            ,"Puducherry","Daman","Silvassa","Kavaratti","Leh" ].map(city=> { %>
+
+                                            <option value="<%= city %>" <%=singleAdmin.city===city ? 'selected' : '' %>>
+                                                <%= city %>
+                                            </option>
+
+                                            <% }) %>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- About -->
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-3 col-form-label text-end">About</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" name="about"
+                                        rows="3"><%= singleAdmin.about %></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Profile Image -->
+                            <div class="form-group row mb-4">
+                                <label class="col-sm-3 col-form-label text-end">Profile Image</label>
+                                <div class="col-sm-9">
+                                    <img src="/<%= singleAdmin.profileimg %>" height="50" class="mb-2">
+                                    <input type="file" name="profileimg" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="border-top pt-3 text-end">
+                            <button type="submit" class="btn btn-warning px-4">
+                                Update
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../footer') %>
