@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const upload = require('../Middleware/multer.middleware');
 
-const { loginPage, checkLogin, logout, changePasswordPage, changePassword, verifyEmail, OTPPage, OTPVerify, newPasswordPage, changeNewPassword, profilePage, dashboardPage } = require('../controllers/admin.controller');
+const { loginPage, checkLogin, logout, changePasswordPage, changePassword, verifyEmail, OTPPage, OTPVerify, newPasswordPage, changeNewPassword, profilePage, dashboardPage } = require('../controllers/auth.controller');
 
 const route = express.Router();
 // Login Page
@@ -43,6 +43,9 @@ route.get('/dashboard', passport.checkAuthIsDone, dashboardPage);
 
 // Category Routes
 route.use('/category', passport.checkAuthIsDone, require('./category.routes'));
+
+// SubCategory Routes
+route.use('/subcategory', passport.checkAuthIsDone, require('./subcategory.routes'));
 
 // Admin Routes
 route.use('/admin', passport.checkAuthIsDone, require('./admin.routes'));

@@ -9,7 +9,7 @@
                 <div class="bg-secondary rounded h-100 p-4">
                     <h6 class="mb-4">Hoverable Table</h6>
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover text-center">
                             <thead class="text-center">
                                 <tr>
                                     <th>No</th>
@@ -70,11 +70,11 @@
                                         <% if (admin.id==="695f42ce9c3487a3e041e9eb" ){%>
                                             <td>
                                                 <button class="btn btn-danger"><a
-                                                        href="/deleteAdmin?Id=<%= admindata.id %>"
+                                                        href="/admin/deleteAdmin?Id=<%= admindata.id %>"
                                                         style="color: white;">Delete</a></button>
                                             </td>
                                             <td>
-                                                <button class="btn btn-warning"><a href="/editAdmin/<%= admindata.id %>"
+                                                <button class="btn btn-warning"><a href="/admin/editAdmin/<%= admindata.id %>"
                                                         style="color: white;">Edit</a></button>
                                             </td>
                                             <%}%>

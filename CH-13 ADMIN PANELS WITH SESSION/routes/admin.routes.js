@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const upload = require('../Middleware/multer.middleware');
 
-const { addAdminPage, viewAdminPage, insertAdmin, deleteAdmin, editAdminPage, updateAdmin } = require('../controllers/auth.controller');
+const { addAdminPage, viewAdminPage, insertAdmin, deleteAdmin, editAdminPage, updateAdmin } = require('../controllers/admin.controller');
 
 const route = express.Router();
 // Add Admin Page
