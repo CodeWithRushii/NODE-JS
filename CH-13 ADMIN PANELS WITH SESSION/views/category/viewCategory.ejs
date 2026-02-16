@@ -1,38 +1,48 @@
 <%- include('../header') %>
 
-<div class="container-fluid pt-4 px-4">
-    <div class="row g-4">
-        <div class="col-sm-12">
-            <div class="bg-secondary rounded h-100 p-4">
-                <h6 class="mb-4">Categories</h6>
-                <div class="table-responsive">
-                    <table class="table table-hover text-center">
-                        <thead class="text-center">
-                            <tr>
-                                <th>No</th>
-                                <th>Category Name</th>
-                                <th>Image</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% allCategory.forEach((cat, index) => { %>
+    <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+            <div class="col-sm-12">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <h6 class="mb-4">Categories</h6>
+                    <div class="table-responsive">
+                        <table class="table table-hover text-center">
+                            <thead class="text-center">
                                 <tr>
-                                    <td><%= index + 1 %></td>
-                                    <td><%= cat.category_name %></td>
-                                    <td><img src="/<%= cat.category_image %>" width="100" alt=""></td>
-                                    <td>
-                                        <a class="btn btn-danger" href="/category/deleteCategory?Id=<%= cat._id %>">Delete</a>
-                                        <a class="btn btn-warning" href="/category/editCategory/<%= cat._id %>">Edit</a>
-                                    </td>
+                                    <th>No</th>
+                                    <th>Category Name</th>
+                                    <th>Image</th>
+                                    <th colspan="2">Action</th>
                                 </tr>
-                            <% }) %>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <% allCategory.forEach((cat, index)=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= index + 1 %>
+                                        </td>
+                                        <td>
+                                            <%= cat.category_name %>
+                                        </td>
+                                        <td><img src="/<%= cat.category_image %>" width="100" alt=""></td>
+                                        <td>
+                                                <button class="btn btn-danger"><a
+                                                        href="/category/deleteCategory?Id=<%= cat._id %>"
+                                                        style="color: white;">Delete</a></button>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-warning"><a
+                                                        href="/category/editCategory/<%= cat._id %>"
+                                                        style="color: white;">Edit</a></button>
+                                            </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<%- include('../footer') %>
+    <%- include('../footer') %>

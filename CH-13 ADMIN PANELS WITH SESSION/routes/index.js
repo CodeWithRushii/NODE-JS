@@ -47,6 +47,12 @@ route.use('/category', passport.checkAuthIsDone, require('./category.routes'));
 // SubCategory Routes
 route.use('/subcategory', passport.checkAuthIsDone, require('./subcategory.routes'));
 
+// Extracategory Routes
+route.use('/extracategory', passport.checkAuthIsDone, require('./extracategory.routes'));
+
+// Product Routes
+route.use('/product', passport.checkAuthIsDone, require('./product.routes'));
+
 // Admin Routes
 route.use('/admin', passport.checkAuthIsDone, require('./admin.routes'));
 module.exports = route;

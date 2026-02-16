@@ -1,6 +1,6 @@
 const express = require('express');
-const upload = require('../Middleware/category.middleware.js');
-const { addSubCategoryPage, addSubCategory, viewSubCategoryPage } = require('../controllers/subCategory.controller');
+
+const { addSubCategoryPage, addSubCategory, viewSubCategoryPage, deleteSubCategory, editSubCategoryPage, updateSubCategory } = require('../controllers/subCategory.controller');
 
 const subCategoryRoute = express.Router();
 
@@ -9,5 +9,9 @@ subCategoryRoute.post('/addSubCategory', addSubCategory);
 
 subCategoryRoute.get('/viewSubCategoryPage', viewSubCategoryPage);
 
+subCategoryRoute.get('/deleteSubCategory', deleteSubCategory);
+
+subCategoryRoute.get('/editSubCategory/:subcategoryId', editSubCategoryPage);
+subCategoryRoute.post('/editSubCategory/:subcategoryId', updateSubCategory);
 
 module.exports = subCategoryRoute;

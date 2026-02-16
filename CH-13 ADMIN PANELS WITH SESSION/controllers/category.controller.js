@@ -1,4 +1,7 @@
 const Category = require('../model/category.model');
+const SubCategory = require('../model/subcategory.model');
+const ExtraCategory = require('../model/extracategory.model');
+const Product = require('../model/product.model');
 const fs = require('fs');
 
 // Add Category Page
@@ -39,12 +42,27 @@ module.exports.viewCategoryPage = async (req, res) => {
 // Delete Category
 module.exports.deleteCategory = async (req, res) => {
     try {
-        const deleted = await Category.findByIdAndDelete(req.query.Id);
 
-        if (deleted && deleted.category_image) {
-            fs.unlink(deleted.category_image, () => { });
+        const deletedsubcategory = await SubCategory.deleteMany({ category_id: req.query.Id });
+
+        const deletedextracategory = await ExtraCategory.deleteMany({ category_id: req.query.Id });
+
+        const deletedproduct = await Product.deleteMany({ category_id: req.query.Id });
+
+        if (deletedsubcategory && deletedextracategory && deletedproduct) {
+
+            const deleted = await Category.findByIdAndDelete(req.query.Id);
+
+            if (deleted) {
+                fs.unlink(deleted.category_image, () => { });
+                req.flash('success', `${deleted.category_name} Deleted Successfully..`);
+
+            }
+            else {
+                req.flash('error', "Failed to Delete Category..");
+            }
         }
-        req.flash('success', `${deleted.category_name} Deleted Successfully..`);
+
         return res.redirect('/category/viewCategoryPage');
     } catch (err) {
         console.log("Delete Category Error:", err);

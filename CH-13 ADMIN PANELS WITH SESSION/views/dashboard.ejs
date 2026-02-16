@@ -1,46 +1,55 @@
 <%- include('header') %>
-    <!-- Sale & Revenue Start -->
+    <!-- Dashboard Stats Start -->
     <div class="container-fluid pt-4 px-4">
         <div class="row g-4">
-            <div class="col-sm-6 col-xl-3">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2.4" style="flex: 0 0 20%; max-width: 20%;">
                 <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-line fa-3x text-primary"></i>
+                    <i class="fa fa-users fa-3x text-primary"></i>
                     <div class="ms-3">
-                        <p class="mb-2">Today Sale</p>
-                        <h6 class="mb-0">$1234</h6>
+                        <p class="mb-2">Total Admin</p>
+                        <h6 class="mb-0"><%= totalAdmins %></h6>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-xl-3">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2.4" style="flex: 0 0 20%; max-width: 20%;">
                 <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                    <i class="fa fa-th fa-3x text-primary"></i>
                     <div class="ms-3">
-                        <p class="mb-2">Total Sale</p>
-                        <h6 class="mb-0">$1234</h6>
+                        <p class="mb-2">Total Category</p>
+                        <h6 class="mb-0"><%= totalCategories %></h6>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-xl-3">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2.4" style="flex: 0 0 20%; max-width: 20%;">
                 <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-area fa-3x text-primary"></i>
+                    <i class="fa fa-list fa-3x text-primary"></i>
                     <div class="ms-3">
-                        <p class="mb-2">Today Revenue</p>
-                        <h6 class="mb-0">$1234</h6>
+                        <p class="mb-2">Subcategories</p>
+                        <h6 class="mb-0"><%= totalSubCategories %></h6>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-xl-3">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2.4" style="flex: 0 0 20%; max-width: 20%;">
                 <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                    <i class="fa fa-cubes fa-3x text-primary"></i>
                     <div class="ms-3">
-                        <p class="mb-2">Total Revenue</p>
-                        <h6 class="mb-0">$1234</h6>
+                        <p class="mb-2">Extra Categories</p>
+                        <h6 class="mb-0"><%= totalExtraCategories %></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2.4" style="flex: 0 0 20%; max-width: 20%;">
+                <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-cube fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Total Product</p>
+                        <h6 class="mb-0"><%= totalProducts %></h6>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Sale & Revenue End -->
+    <!-- Dashboard Stats End -->
 
 
     <!-- Sales Chart Start -->

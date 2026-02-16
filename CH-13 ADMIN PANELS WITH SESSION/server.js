@@ -12,7 +12,7 @@ require('./Middleware/passport.local.middleware');
 
 const app = express();
 
-const PORT = 9080;
+const PORT = 8090;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));

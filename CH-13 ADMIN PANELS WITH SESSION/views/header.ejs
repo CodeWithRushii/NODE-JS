@@ -74,18 +74,79 @@
                     <a href="/dashboard" class="nav-item nav-link "><i
                             class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
 
-                    <a href="/admin/addAdminPage" class="nav-item nav-link"><i class="fa fa-user-plus me-2"></i>ADD
-                        ADMIN</a>
-                    <a href="/admin/viewAdminPage" class="nav-item nav-link"><i class="fa fa-user me-2"></i>VIEW
-                        ADMIN</a>
-                    <a href="/category/addCategoryPage" class="nav-item nav-link"><i class="fa fa-list me-2"></i>ADD
-                        CATEGORY</a>
-                    <a href="/category/viewCategoryPage" class="nav-item nav-link"><i class="fa fa-list me-2"></i>VIEW
-                        CATEGORY</a>
-                    <a href="/subcategory/addSubCategoryPage" class="nav-item nav-link"><i class="fa fa-list me-2"></i>ADD
-                        SUB CATEGORY</a>
-                    <a href="/subcategory/viewSubCategoryPage" class="nav-item nav-link"><i class="fa fa-list me-2"></i>VIEW
-                        SUB CATEGORY</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-user-shield me-2"></i>
+                            <span>Admin </span>
+                        </a>
+                        <div class="dropdown-menu bg-secondary border-0 rounded-0 w-100">
+                            <a href="/admin/addAdminPage" class="dropdown-item ps-5">
+                                <i class="fa fa-user-plus me-2"></i>Add Admin
+                            </a>
+                            <a href="/admin/viewAdminPage" class="dropdown-item ps-5">
+                                <i class="fa fa-users me-2"></i>View Admin
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-th me-2"></i>
+                            <span>Category</span>
+                        </a>
+                        <div class="dropdown-menu bg-secondary border-0 rounded-0 w-100 " data-bs-auto-close="false"
+                            active>
+                            <a href="/category/addCategoryPage" class="dropdown-item ps-5">
+                                <i class="fa fa-plus-circle me-2"></i>Add Category
+                            </a>
+                            <a href="/category/viewCategoryPage" class="dropdown-item ps-5">
+                                <i class="fa fa-list-ul me-2"></i>View Category
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-list me-2"></i>
+                            <span>Sub Category</span>
+                        </a>
+                        <div class="dropdown-menu bg-secondary border-0 rounded-0 w-100">
+                            <a href="/subcategory/addSubCategoryPage" class="dropdown-item ps-5">
+                                <i class="fa fa-plus-square me-2"></i>Add Sub Category
+                            </a>
+                            <a href="/subcategory/viewSubCategoryPage" class="dropdown-item ps-5">
+                                <i class="fa fa-eye me-2"></i>View Sub Category
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-cubes me-2"></i>
+                            <span>Extra Category</span>
+                        </a>
+                        <div class="dropdown-menu bg-secondary border-0 rounded-0 w-100">
+                            <a href="/extracategory/addExtraCategoryPage" class="dropdown-item ps-5">
+                                <i class="fa fa-plus-circle me-2"></i>Add Extra Category
+                            </a>
+                            <a href="/extracategory/viewExtraCategory" class="dropdown-item ps-5">
+                                <i class="fa fa-eye me-2"></i>View Extra Category
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-cube me-2"></i>
+                            <span>Product</span>
+                        </a>
+                        <div class="dropdown-menu bg-secondary border-0 rounded-0 w-100">
+                            <a href="/product/addProductPage" class="dropdown-item ps-5">
+                                <i class="fa fa-plus-circle me-2"></i>Add Product
+                            </a>
+                            <a href="/product/viewProductPage" class="dropdown-item ps-5">
+                                <i class="fa fa-eye me-2"></i>View Product
+                            </a>
+                        </div>
+                    </div>
 
                 </div>
             </nav>

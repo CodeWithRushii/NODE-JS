@@ -1,4 +1,8 @@
 const Admin = require('../model/admin.model');
+const Category = require('../model/category.model');
+const SubCategory = require('../model/subcategory.model');
+const ExtraCategory = require('../model/extracategory.model');
+const Product = require('../model/product.model');
 const fs = require('fs');
 const nodemailer = require('nodemailer');
 
@@ -264,7 +268,19 @@ module.exports.changeNewPassword = async (req, res) => {
 // Dashboard Page
 module.exports.dashboardPage = async (req, res) => {
     try {
-        return res.render('dashboard');
+        const totalAdmins = await Admin.countDocuments();
+        const totalCategories = await Category.countDocuments();
+        const totalSubCategories = await SubCategory.countDocuments();
+        const totalExtraCategories = await ExtraCategory.countDocuments();
+        const totalProducts = await Product.countDocuments();
+
+        return res.render('dashboard', { 
+            totalAdmins, 
+            totalCategories, 
+            totalSubCategories, 
+            totalExtraCategories, 
+            totalProducts 
+        });
     } catch (err) {
         console.log("Dashboard Error:", err);
         return res.redirect('/');

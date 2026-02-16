@@ -19,7 +19,7 @@
                                 <div class="col-sm-9">
                                     <select name="category_id" class="form-control" required>
                                         <option value="">Select Category</option>
-                                        <% categories.forEach(category=> { %>
+                                        <% categories.map(category=> { %>
                                             <option value="<%= category._id %>">
                                                 <%= category.category_name %>
                                             </option>
@@ -38,14 +38,14 @@
                             </div>
 
 
-    <!-- Form End -->
-                        <!-- Submit -->
+                            <!-- Form End -->
+                            <!-- Submit -->
                             <div class="border-top pt-3">
                                 <div class="card-body">
                                     <button type="submit" class="btn btn-primary px-4">Add Subcategory</button>
                                 </div>
                             </div>
-
+                        </div>
                     </form>
 
                 </div>

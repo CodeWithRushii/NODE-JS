@@ -85,7 +85,7 @@ module.exports.updateAdmin = async (req, res) => {
             : res.redirect('/admin/viewAdminPage');
 
     } catch (err) {
-        console.log("Update Admin Error:", err);
+        console.zg("Update Admin Error:", err);
         return res.redirect('/admin/viewAdminPage');
     }
 };
