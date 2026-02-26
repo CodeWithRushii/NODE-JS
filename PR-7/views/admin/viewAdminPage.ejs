@@ -1,0 +1,95 @@
+<%- include('../header') %>
+
+
+    <!-- Table Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+
+            <div class="col-sm-12 ">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <h6 class="mb-4">Hoverable Table</h6>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>No</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
+                                    <th>contact</th>
+                                    <th>Gender</th>
+                                    <th>Hobby</th>
+                                    <th>City</th>
+                                    <th>About</th>
+                                    <th>Image</th>
+                                    <% if (admin.id==="695f42ce9c3487a3e041e9eb" ){%>
+                                        <th colspan="2">Action</th>
+                                        <%}%>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% allAdmin.map((admindata, index)=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= index + 1%>
+                                        </td>
+
+                                        <td>
+                                            <%= admindata.fname %>
+                                        </td>
+
+                                        <td>
+                                            <%= admindata.lname %>
+                                        </td>
+                                        <td>
+                                            <%= admindata.email %>
+                                        </td>
+                                        <td>
+                                            <%= admindata.password %>
+                                        </td>
+                                        <td>
+                                            <%= admindata.contact %>
+                                        </td>
+                                        <td>
+                                            <%= admindata.gender %>
+                                        </td>
+                                        <td>
+                                            <%= admindata.hobby %>
+                                        </td>
+                                        <td>
+                                            <%= admindata.city %>
+                                        </td>
+                                        <td>
+                                            <%= admindata.about %>
+                                        </td>
+                                        <td>
+                                            <img src="/<%= admindata.profileimg %>" width="100" alt="">
+                                        </td>
+
+                                        <% if (admin.id==="695f42ce9c3487a3e041e9eb" ){%>
+                                            <td>
+                                                <button class="btn btn-danger"><a
+                                                        href="/deleteAdmin?Id=<%= admindata.id %>"
+                                                        style="color: white;">Delete</a></button>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-warning"><a href="/editAdmin/<%= admindata.id %>"
+                                                        style="color: white;">Edit</a></button>
+                                            </td>
+                                            <%}%>
+                                    </tr>
+
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Table End -->
+
+
+    <%- include('../footer') %>
