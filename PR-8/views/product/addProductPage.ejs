@@ -1,0 +1,156 @@
+<%- include('../header') %>
+
+    <!-- Form Start -->
+    <div class="container-fluid pt-4 px-4 justify-contect-center">
+        <div class="row g-4">
+
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-secondary rounded h-100 p-4">
+
+                    <h6 class="mb-4">Add Product Form</h6>
+
+                    <form class="form-horizontal" method="post" action="/product/addProduct"
+                        enctype="multipart/form-data">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Product Info</h4>
+
+                            <div class="mb-3 row">
+                                <label for="product_name" class="col-sm-3 col-form-label">Product Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="product_name" name="product_name"
+                                        placeholder="Product Name" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                                <label for="category" class="col-sm-3 col-form-label">Category</label>
+                                <div class="col-sm-9">
+                                    <select class="form-select" id="category" name="category_id" required>
+                                        <option value="">Select Category</option>
+                                        <% categories.map(category=> { %>
+                                            <option value="<%= category._id %>">
+                                                <%= category.category_name %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                                <label for="subcategory" class="col-sm-3 col-form-label">Sub Category</label>
+                                <div class="col-sm-9">
+                                    <select class="form-select" id="subcategory" name="subcategory_id" required>
+                                        <option value="">Select Sub Category</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row">
+                                <label for="extracategory" class="col-sm-3 col-form-label">Extra Category</label>
+                                <div class="col-sm-9">
+                                    <select class="form-select" id="extracategory" name="extra_category_id" required>
+                                        <option value="">Select Extra Category</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!--old price-->
+                            <div class="mb-3 row">
+                                <label for="old_price" class="col-sm-3 col-form-label">Old Price</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" id="old_price" name="old_price"
+                                        placeholder="Old Price" required>
+                                </div>
+                            </div>
+
+                            <!--new price-->
+                            <div class="mb-3 row">
+                                <label for="price" class="col-sm-3 col-form-label">New Price</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" id="price" name="price"
+                                        placeholder="New Price" required>
+                                </div>
+                            </div>
+
+                            <!--stock-->
+                            <div class="mb-3 row">
+                                <label for="stock" class="col-sm-3 col-form-label">Stock</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" id="stock" name="stock"
+                                        placeholder="Stock" required>
+                                </div>
+                            </div>
+
+                            <!--description-->
+                            <div class="mb-3 row">
+                                <label for="description" class="col-sm-3 col-form-label">Description</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" id="description" name="description"
+                                        placeholder="Description" required></textarea>
+                                </div>
+                            </div>
+
+                            <!--image-->
+                            <div class="mb-3 row">
+                                <label for="image" class="col-sm-3 col-form-label">Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file" class="form-control" id="image" name="image" required>
+                                </div>
+                            </div>
+
+                            <!-- Form End -->
+                            <!-- Submit -->
+                            <div class="border-top pt-3">
+                                <div class="card-body">
+                                    <button type="submit" class="btn btn-primary px-4">Add Product</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('../footer') %>
+
+        <script>
+            const allSubCategories = <%- JSON.stringify(subcategories) %>;
+            const allExtraCategories = <%- JSON.stringify(extracategories) %>;
+
+            const subCatSelect = document.getElementById("subcategory");
+            const extraCatSelect = document.getElementById("extracategory");
+
+            document.getElementById("category").addEventListener("change", (e) => {
+                subCatSelect.innerHTML = '<option value="">Select Sub Category</option>';
+                extraCatSelect.innerHTML = '<option value="">Select Extra Category</option>';
+
+                const filteredSubCats = allSubCategories.filter(item =>
+                    item.category_id.toString() === e.target.value
+                );
+
+                let options = '<option value="">Select Sub Category</option>';
+                filteredSubCats.forEach(item => {
+                    options += `<option value="${item._id}">${item.subcategory_name}</option>`;
+                });
+
+                subCatSelect.innerHTML = options;
+            });
+
+            subCatSelect.addEventListener("change", (e) => {
+                extraCatSelect.innerHTML = '<option value="">Select Extra Category</option>';
+
+                const filteredExtraCats = allExtraCategories.filter(item =>
+                    item.subcategory_id.toString() === e.target.value
+                );
+
+                let options = '<option value="">Select Extra Category</option>';
+                filteredExtraCats.forEach(item => {
+                    options += `<option value="${item._id}">${item.extra_category_name}</option>`;
+                });
+
+                extraCatSelect.innerHTML = options;
+            });
+        </script>

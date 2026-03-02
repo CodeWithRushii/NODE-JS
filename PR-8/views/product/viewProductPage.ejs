@@ -1,0 +1,104 @@
+<%- include('../header') %>
+
+    <div class="container-fluid pt-4 px-4">
+        <div class="row g-4">
+            <div class="col-sm-12">
+                <div class="bg-secondary rounded h-100 p-4">
+                    <h6 class="mb-4">Products</h6>
+                    <div class="table-responsive">
+                        <table class="table table-hover text-center">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Product Name</th>
+                                    <th>Category Name</th>
+                                    <th>Sub Category Name</th>
+                                    <th>Extra Category Name</th>
+                                    <th>Old Price</th>
+                                    <th>New Price</th>
+                                    <th>Stock</th>
+                                    <th>Product Image</th>
+                                    <th>Description</th>
+                                    <th colspan="2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <% allProduct.forEach((data, index)=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= index + 1 %>
+                                        </td>
+                                        <td>
+                                            <%= data.product_name %>
+                                        </td>
+                                        <td>
+                                            <%= data.category_id.category_name %>
+                                        </td>
+                                        <td>
+                                            <%= data.subcategory_id.subcategory_name %>
+                                        </td>
+                                        <td>
+                                            <%= data.extra_category_id.extra_category_name %>
+                                        </td>
+                                        <td>
+                                            <%= data.old_price %>
+                                        </td>
+                                        <td>
+                                            <%= data.price %>
+                                        </td>
+                                        <td>
+                                            <%= data.stock %>
+                                        </td>
+                                        <td>
+                                            <img src="../<%= data.image %>" width="50px" height="50px" />
+                                        </td>
+                                        <td>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="descModal-<%= data._id %>" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content bg-secondary">
+                                                        <div class="modal-header border-0">
+                                                            <h5 class="modal-title text-white">Product Description</h5>
+                                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body text-white">
+                                                            <%= data.description %>
+                                                        </div>
+                                                        <div class="modal-footer border-0">
+                                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#descModal-<%= data._id %>">
+                                                More
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger">
+                                                <a href="/product/deleteProduct?Id=<%= data._id %>"
+                                                    style="color: white; text-decoration: none;">Delete</a>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-warning">
+                                                <a href="/product/editProductPage/<%= data._id %>"
+                                                    style="color: white; text-decoration: none;">Edit</a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../footer') %>
+
+        <script>
+            // No JavaScript needed for Bootstrap modals
+        </script>

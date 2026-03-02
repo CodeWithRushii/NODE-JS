@@ -1,0 +1,49 @@
+<%- include('../header') %>
+
+    <!-- Form Start -->
+    <div class="container-fluid pt-4 px-4 justify-contect-center">
+        <div class="row g-4">
+
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-secondary rounded h-100 p-4">
+
+                    <h6 class="mb-4">Category Form</h6>
+
+                    <form class="form-horizontal" method="post" action="/category/addCategory" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Category Info</h4>
+
+                            <!-- First Name -->
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-3 text-right col-form-label">Category Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="category_name" class="form-control" placeholder="Category Name Here">
+                                </div>
+                            </div>
+
+                            <!-- c Image -->
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-3 text-right col-form-label">Category Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file" name="category_image" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="border-top pt-3">
+                            <div class="card-body">
+                                <button type="submit" class="btn btn-primary px-4">Add Category</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('../footer') %>
