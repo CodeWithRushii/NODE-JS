@@ -10,7 +10,7 @@ module.exports.addProductPage = async (req, res) => {
         const subcategories = await subCategoryModel.find();
         const extracategories = await extraCategoryModel.find();
 
-        return res.render('product/addProductPage', { categories, subcategories, extracategories });
+        return res.render('product/addProductPage', { categories, subcategories, extracategories, activePage: 'addProduct' });
     } catch (err) {
         console.log("Error : ", err);
         req.flash('error', "Something went wrong !!");
@@ -51,7 +51,7 @@ module.exports.viewProductPage = async (req, res) => {
             .populate('subcategory_id', "subcategory_name subcategory_image")
             .populate('extra_category_id', "extra_category_name");
 
-        return res.render("product/viewProductPage", { allProduct });
+        return res.render("product/viewProductPage", { allProduct, activePage: 'viewProduct' });
 
     } catch (err) {
         console.log("Error : ", err);

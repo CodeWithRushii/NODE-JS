@@ -5,7 +5,7 @@ const fs = require('fs');
 // Add Admin Page
 module.exports.addAdminPage = async (req, res) => {
     try {
-        return res.render('admin/addAdminPage');
+        return res.render('admin/addAdminPage', { activePage: 'addAdmin' });
     } catch (err) {
         console.log("Add Admin Page Error:", err);
         return res.redirect('/dashboard');
@@ -17,7 +17,7 @@ module.exports.viewAdminPage = async (req, res) => {
     try {
         let allAdmin = await Admin.find();
         allAdmin = allAdmin.filter(a => a.email !== res.locals.admin.email);
-        return res.render('admin/viewAdminPage', { allAdmin });
+        return res.render('admin/viewAdminPage', { allAdmin, activePage: 'viewAdmin' });
     } catch (err) {
         console.log("View Admin Error:", err);
         return res.redirect('/dashboard');

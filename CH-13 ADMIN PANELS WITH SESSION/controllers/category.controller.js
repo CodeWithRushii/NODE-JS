@@ -7,7 +7,7 @@ const fs = require('fs');
 // Add Category Page
 module.exports.addCategoryPage = async (req, res) => {
     try {
-        return res.render('category/addCategory');
+        return res.render('category/addCategory', { activePage: 'addCategory' });
     } catch (err) {
         console.log("Add Category Page Error:", err);
         return res.redirect('/dashboard');
@@ -32,7 +32,7 @@ module.exports.insertCategory = async (req, res) => {
 module.exports.viewCategoryPage = async (req, res) => {
     try {
         const allCategory = await Category.find();
-        return res.render('category/viewCategory', { allCategory });
+        return res.render('category/viewCategory', { allCategory, activePage: 'viewCategory' });
     } catch (err) {
         console.log("View Category Error:", err);
         return res.redirect('/dashboard');

@@ -53,23 +53,27 @@
                                             <img src="../<%= data.image %>" width="50px" height="50px" />
                                         </td>
                                         <td>
-                                            <div id="desc-container-<%= data._id %>"
-                                                style="max-width: 200px; margin: 0 auto; text-align: left;">
-                                                <span id="short-<%= data._id %>">
-                                                    <%= data.description.substring(0, 50) %>...
-                                                </span>
-
-                                                <span id="full-<%= data._id %>" style="display: none;">
-                                                    <%= data.description %>
-                                                </span>
-
-                                                <br>
-                                                <button class="btn btn-sm btn-info mt-1"
-                                                    onclick="toggleDescription('<%= data._id %>')"
-                                                    id="btn-<%= data._id %>">
-                                                    More
-                                                </button>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="descModal-<%= data._id %>" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content bg-secondary">
+                                                        <div class="modal-header border-0">
+                                                            <h5 class="modal-title text-white">Product Description</h5>
+                                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body text-white">
+                                                            <%= data.description %>
+                                                        </div>
+                                                        <div class="modal-footer border-0">
+                                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
+
+                                            <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#descModal-<%= data._id %>">
+                                                More
+                                            </button>
                                         </td>
                                         <td>
                                             <button class="btn btn-danger">
@@ -96,23 +100,5 @@
     <%- include('../footer') %>
 
         <script>
-            function toggleDescription(productId) {
-                const shortDesc = document.getElementById(`short-${productId}`);
-                const fullDesc = document.getElementById(`full-${productId}`);
-                const btn = document.getElementById(`btn-${productId}`);
-
-                if (fullDesc.style.display === 'none') {
-                    // Jab 'More' dabaye: Short text ko chupa do aur Full text dikhao
-                    shortDesc.style.display = 'none';
-                    fullDesc.style.display = 'inline';
-                    btn.textContent = 'Less';
-                    btn.classList.replace('btn-info', 'btn-secondary');
-                } else {
-                    // Jab 'Less' dabaye: Full text ko chupa do aur Short text wapas dikhao
-                    shortDesc.style.display = 'inline';
-                    fullDesc.style.display = 'none';
-                    btn.textContent = 'More';
-                    btn.classList.replace('btn-secondary', 'btn-info');
-                }
-            }
+            // No JavaScript needed for Bootstrap modals
         </script>

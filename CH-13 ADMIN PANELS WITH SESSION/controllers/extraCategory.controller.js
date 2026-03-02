@@ -8,7 +8,7 @@ module.exports.addExtraCategoryPage = async (req, res) => {
         const categories = await Category.find();
         const subcategories = await SubCategory.find();
 
-        return res.render('extracategory/addExtraCategoryPage', { categories, subcategories });
+        return res.render('extracategory/addExtraCategoryPage', { categories, subcategories, activePage: 'addExtraCategory' });
     } catch (err) {
         console.log("Error : ", err);
         req.flash('error', "Something went wrong !!");
@@ -39,7 +39,7 @@ module.exports.addExtraCategory = async (req, res) => {
 module.exports.viewExtraCategory = async (req, res) => {
     try {
         const extraCategories = await ExtraCategory.find().populate('category_id').populate('subcategory_id');
-        return res.render('extracategory/viewExtraCategoryPage', { extraCategories });
+        return res.render('extracategory/viewExtraCategoryPage', { extraCategories, activePage: 'viewExtraCategory' });
     } catch (err) {
         console.log("Error : ", err);
         req.flash('error', "Something went wrong !!");
