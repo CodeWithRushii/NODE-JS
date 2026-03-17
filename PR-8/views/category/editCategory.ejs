@@ -9,7 +9,8 @@
 
                     <h6 class="mb-4">Category Form</h6>
 
-                    <form class="form-horizontal" method="post" action="/category/addCategory" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="post" action="/category/editCategory/<%= category.id %>"
+                        enctype="multipart/form-data">
                         <div class="card-body">
                             <h4 class="card-title mb-4">Category Info</h4>
 
@@ -17,7 +18,8 @@
                             <div class="form-group row mb-3">
                                 <label class="col-sm-3 text-right col-form-label">Category Name</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="category_name" class="form-control" value="<%= category.category_name %>" placeholder="Category Name Here">
+                                    <input type="text" name="category_name" class="form-control"
+                                        value="<%= category.category_name %>" placeholder="Category Name Here">
                                 </div>
                             </div>
 
@@ -25,7 +27,8 @@
                             <div class="form-group row mb-3">
                                 <label class="col-sm-3 text-right col-form-label">Category Image</label>
                                 <div class="col-sm-9">
-                                    <input type="file" name="category_image"  value="<%= category.category_image %>" class="form-control">
+                                    <input type="file" name="category_image" value="<%= category.category_image %>"
+                                        class="form-control">
                                 </div>
                             </div>
 
@@ -34,7 +37,7 @@
                         <!-- Submit -->
                         <div class="border-top pt-3">
                             <div class="card-body">
-                                <button type="submit" class="btn btn-primary px-4">Add Category</button>
+                                <button type="submit" class="btn btn-primary px-4">edit Category</button>
                             </div>
                         </div>
 
