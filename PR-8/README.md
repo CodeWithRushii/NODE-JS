@@ -1,4 +1,4 @@
-# Admin Panel - Ch-12
+# Admin Panel - PR-8
 
 A full-featured Node.js Admin Panel application with authentication, product management, category management, and more.
 
